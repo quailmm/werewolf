@@ -1,0 +1,9 @@
+// wcemu v0.0.1
+// This file was created by quail v1.5.9
+// Original file: globalfroglok_chr.wld
+
+WORLDDEF
+	NEWWORLD 0 // in wld files this signifies a version flag
+	ZONE 0 // when 1 this parses things as if a zone
+	EQGVERSION? NULL // used in eqg parsing for version rebuilding
+

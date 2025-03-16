@@ -1,0 +1,9 @@
+qmm:
+  - name: "Werewolf Classic"
+    id: "werewolf"
+    quail: v1.5.9
+    version: "v1.0.0"
+    image: "qmm.png"
+    url: "https://github.com/quailmm/werewolf"
+    description: |
+      Edits modern werewolves to become classic.

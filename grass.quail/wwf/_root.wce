@@ -1,0 +1,6 @@
+// wcemu v0.0.1
+// This file was created by quail v1.5.9
+// Original file: globalfroglok_chr.wld
+
+INCLUDE "WWF.WCE"
+INCLUDE "ANIMATIONS/_ROOT.WCE"

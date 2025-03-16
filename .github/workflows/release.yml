@@ -1,0 +1,45 @@
+name: Zip Root Files
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  zip_files:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Create a ZIP file containing all files in the root directory
+      - name: Create ZIP file
+        run: |
+          echo "Creating ZIP file..."
+          mkdir -p /tmp/grass
+          cp qmm.yaml /tmp/grass
+          cp qmm.png /tmp/grass
+          cp -r grass.quail/* /tmp/grass
+          rm -rf /tmp/grass/.github
+          rm -rf /tmp/grass/.vscode
+          cd /tmp/grass
+          zip -r qmm.zip .
+          mv qmm.zip $GITHUB_WORKSPACE/qmm-v1.0.${{ github.run_number }}.zip
+
+      # Upload the ZIP file as an artifact
+      - name: Upload ZIP file
+        uses: actions/upload-artifact@v4
+        with:
+          name: qmm-v1.0.${{ github.run_number }}.zip
+          path: qmm-v1.0.${{ github.run_number }}.zip
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        if: github.ref == 'refs/heads/main'
+        with:
+          repo_token: "${{secrets.GITHUB_TOKEN}}"
+          automatic_release_tag: "v1.0.${{ github.run_number }}"
+          prerelease: false
+          title: "v1.0.${{ github.run_number }}"
+          files: |
+            qmm-v1.0.${{ github.run_number }}.zip

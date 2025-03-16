@@ -1,0 +1,12 @@
+// wcemu v0.0.1
+// This file was created by quail v1.5.9
+// Original file: globalfroglok_chr.wld
+
+INCLUDE "C05_WWF.WCE"
+INCLUDE "D02_WWF.WCE"
+INCLUDE "D05_WWF.WCE"
+INCLUDE "L02_WWF.WCE"
+INCLUDE "O01_WWF.WCE"
+INCLUDE "P01_WWF.WCE"
+INCLUDE "P03_WWF.WCE"
+INCLUDE "P06_WWF.WCE"
