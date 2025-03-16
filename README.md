@@ -1,0 +1,2 @@
+# werewolf
+Adds classic werewolf
